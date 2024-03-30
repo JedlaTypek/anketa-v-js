@@ -1,65 +1,76 @@
 [
   {
+    "id": 0,
     "name": "Jirka",
     "money": 0,
     "power": 0,
     "experience": 0
   },
   {
+    "id": 1,
     "name": "Honza",
     "money": 0,
     "power": 0,
     "experience": 0
   },
   {
+    "id": 2,
     "name": "Franta",
     "money": 0,
     "power": 0,
     "experience": 0
   },
   {
+    "id": 3,
     "name": "Filip M.",
     "money": 0,
     "power": 0,
     "experience": 0
   },
   {
+    "id": 4,
     "name": "Oliver",
     "money": 0,
     "power": 0,
     "experience": 0
   },
   {
+    "id": 5,
     "name": "Štěpán",
     "money": 0,
     "power": 0,
     "experience": 0
   },
   {
+    "id": 6,
     "name": "Vojta",
     "money": 0,
     "power": 0,
     "experience": 0
   },
   {
+    "id": 7,
     "name": "David",
     "money": 0,
     "power": 0,
     "experience": 0
   },
   {
+    "id": 8,
     "name": "Filip Š.",
     "money": 0,
     "power": 0,
     "experience": 0
   },
   {
+    "id": 9,
     "name": "Metoděj",
     "money": 0,
     "power": 0,
     "experience": 0
   },
   {
+    "id": 10,
     "name": "Max",
     "money": 0,
     "power": 0,

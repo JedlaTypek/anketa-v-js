@@ -7,37 +7,34 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Zápis informací do profilů</h1>
-    </header>
+    <%- include('blocks/header'); -%>
     <main>
-        <form action="">
+        <form id="formular" action="/submit" method="post" class="formular">
             <div class="profileCardWraper">
                 <% people.forEach(function(person){ %>
                     <div class="profileCard">
                         <h2><%= person.name %></h2>
                         <p>Peníze: <%= person.money %>, Síla: <%= person.power %>, Zkušenosti: <%= person.experience %></p>
-                        <input type="checkbox" id="<%= person.name %>Chech"><label>Upravovat hromadně</label>
+                        <input type="checkbox" name="<%= person.id %>Check"><label>Upravovat hromadně</label>
                         <h3>Změny hodnot:</h3>
-                        <input type="number" id="<%= person.name %>Money" placeholder="Peníze" step="1">
-                        <input type="number" id="<%= person.name %>Power" placeholder="Síla" step="1">
-                        <input type="number" id="<%= person.name %>Experience" placeholder="Zkušenosti" step="1">
+                        <input type="number" name="<%= person.id %>Money" placeholder="Peníze" step="1">
+                        <input type="number" name="<%= person.id %>Power" placeholder="Síla" step="1">
+                        <input type="number" name="<%= person.id %>Experience" placeholder="Zkušenosti" step="1">
                     </div>
                 <% }) %>
                 <div class="profileCard">
                     <h2>Hromadná úprava zaškrtnutých</h2>
+                    <input type="checkbox" id="oznacVse" value="true"><label>Označ vše</label>
                     <h3>Změny hodnot:</h3>
                     <input type="number" id="allMoney" placeholder="Peníze" step="1">
                     <input type="number" id="allPower" placeholder="Síla" step="1">
                     <input type="number" id="allExperience" placeholder="Zkušenosti" step="1">
                 </div>
             </div>
-            <button type="submit" class="center">Aktualizovat stavy</button>
+            <button type="submit" style="margin-top: 60px;">Odeslat změny</button>
         </form>
     </main>
-    <footer>
-        <p>&copy; Copyright <%= year %> Vytvořil Filip Jedlička - SŠPU Opava IT2</p>
-    </footer>
+    <%- include('blocks/footer'); -%>
 </body>
 <script src="js/script.js"></script>
 </html>
