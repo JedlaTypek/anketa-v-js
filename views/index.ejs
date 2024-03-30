@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balance</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="media/favicon.png" type="image/x-icon">
 </head>
 <body>
     <%- include('blocks/header'); -%>
@@ -14,7 +15,7 @@
                 <% people.forEach(function(person){ %>
                     <div class="profileCard">
                         <h2><%= person.name %></h2>
-                        <p>Peníze: <%= person.money %>, Síla: <%= person.power %>, Zkušenosti: <%= person.experience %></p>
+                        <p><%= person.money %> <img src="media/money.png" alt="" class="icon" style="margin-right: 10px;"> <%= person.power %> <img src="media/power.png" alt="" class="icon" style="margin-right: 10px;"> <%= person.experience %> <img src="media/experience.png" alt="" class="icon"></p>
                         <input type="checkbox" id="<%= person.id %>Check"><label>Upravovat hromadně</label>
                         <h3>Změny hodnot:</h3>
                         <input type="number" name="<%= person.id %>money" placeholder="Peníze" step="1">

@@ -1,6 +1,6 @@
 :root{
-    --zelena: #2e922b;
-    --zelena-hover: #2a8327;
+    --zelena: #23451f;
+    --zelena-hover: #101f0e;
     --modra: #58adb8;
     --pozadi: #131313;
     --seda: #333333;
@@ -37,6 +37,10 @@ header{
     padding: 80px 0;
 }
 
+header a{
+    color: white;
+}
+
 footer{
     padding: 30px 0;
 }
@@ -55,6 +59,7 @@ h1{
     font-size: 50px;
     line-height: 65px;
     text-transform: uppercase;
+    margin-bottom: 0px;
 }
 
 .formular{
@@ -65,7 +70,7 @@ h1{
 }
 
 .profileCard{
-    background:linear-gradient(0deg, var(--prekryti), var(--prekryti)), url(../media/pozadi-karty.jpeg);
+    background: linear-gradient(0deg, var(--prekryti), var(--prekryti)), url(../media/pozadi-karty.jpeg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -104,10 +109,11 @@ h1{
 button{
     padding: 15px 30px;
     background-color: var(--zelena);
-    color: black;
+    color: white;
     border:none;
     border-radius: 30px;
     transition: 300ms;
+    cursor: pointer;
 }
 
 button:hover{
@@ -128,6 +134,11 @@ thead, tfoot{
 
 thead th{
     border: solid 1px var(--pozadi);
+    text-transform: uppercase;
+}
+
+thead a{
+    color: var(--pozadi)
 }
 
 tbody{
@@ -141,4 +152,36 @@ th{
 
 tbody th{
     border: solid 1px var(--pozadi);
+}
+
+.active.asc::after{
+    content: "▼";
+    margin-left: 10px;
+}
+
+.active.desc::after{
+    content: "▲";
+    margin-left: 10px;
+}
+
+#sortByName .active.asc::after{
+    content: "Z - A";
+}
+
+#sortByName .active.desc::after{
+    content: "A - Z";
+}
+
+.active{
+    color: #73312c;
+    transition: 300ms;
+}
+
+.active:hover{
+    color: #4d211e;
+}
+
+.icon{
+    width: 24px;
+    vertical-align: bottom;
 }

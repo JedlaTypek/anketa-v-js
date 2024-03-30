@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistiky</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="media/favicon.png" type="image/x-icon">
 </head>
 <body>
     <%- include('blocks/header'); -%>
     <main>
-        <button id="filtrovat" style="margin-bottom: 60px;">Filtrovat</button>
-        <div></div>
+        <!--<input type="text" id="nameContains"><button id="nameContainsBtn" style="margin-bottom: 60px;">Filtrovat</button>-->
         <table>
             <thead>
                 <tr>
-                    <th>Jméno</th>
-                    <th>Peníze</th>
-                    <th>Síla</th>
-                    <th>Zkušenosti</th>
+                    <th id="sortByName"><a href="?sortBy=name&order=asc" class="asc">Jméno</a></th>
+                    <th id="sortByMoney"><a href="?sortBy=money&order=desc" class="desc">Peníze</a></th>
+                    <th id="sortByPower"><a href="?sortBy=power&order=desc" class="desc">Síla</a></th>
+                    <th id="sortByExperience"><a href="?sortBy=experience&order=desc" class="desc">Zkušenosti</a></th>
                 </tr>
             </thead>
             <tbody>

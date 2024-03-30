@@ -35,14 +35,14 @@ app.get('/stats', function (req, res) {
             res.status(500).send('Nastala chyba při získávání zůstatků');
             return;
         }
-        if(sortBy){ // řazení podle money, power, experience
-
-        }
-        if(order){ // vzestupně nebo sestupně
-
+        if(sortBy){ // řazení podle jména (abecedy), money, power, experience, defaultně se řadí vzestupně
+            people = sortByKey(people, sortBy);
+            if(order == 'desc'){ //v případě sestupného řazení se pole otočí
+                people.reverse();
+            }
         }
         if(nameContains){ // hledá jména, která obsahují daný string
-
+            console.log(nameContains)
         }
 
         res.render('stats', { people, year: new Date().getFullYear(), title: "Statistiky"});
@@ -130,6 +130,14 @@ function updateBalances(people, balances) {
         }
     });
     return balances;
+}
+
+function sortByKey(array, key) {
+    return array.sort((a, b) => {
+        if (a[key] < b[key]) return -1;
+        if (a[key] > b[key]) return 1;
+        return 0;
+    });
 }
 
 app.listen(3001)

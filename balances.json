@@ -2,58 +2,58 @@
   {
     "id": 0,
     "name": "Jirka",
-    "money": 50,
-    "power": 10,
-    "experience": 15
+    "money": 43,
+    "power": 18,
+    "experience": 26
   },
   {
     "id": 1,
     "name": "Honza",
-    "money": 50,
-    "power": 10,
-    "experience": 15
+    "money": 51,
+    "power": 16,
+    "experience": 23
   },
   {
     "id": 2,
     "name": "Franta",
-    "money": 50,
-    "power": 10,
-    "experience": 15
+    "money": 49,
+    "power": 21,
+    "experience": 21
   },
   {
     "id": 3,
     "name": "Filip M.",
-    "money": 50,
-    "power": 10,
-    "experience": 15
+    "money": 60,
+    "power": 25,
+    "experience": 28
   },
   {
     "id": 4,
     "name": "Oliver",
-    "money": 50,
-    "power": 10,
-    "experience": 15
+    "money": 29,
+    "power": 11,
+    "experience": 13
   },
   {
     "id": 5,
     "name": "Štěpán",
-    "money": 50,
-    "power": 10,
-    "experience": 15
+    "money": 70,
+    "power": 28,
+    "experience": 24
   },
   {
     "id": 6,
     "name": "Vojta",
-    "money": 50,
-    "power": 10,
-    "experience": 15
+    "money": 39,
+    "power": 19,
+    "experience": 22
   },
   {
     "id": 7,
     "name": "David",
-    "money": 50,
-    "power": 10,
-    "experience": 15
+    "money": 0,
+    "power": 0,
+    "experience": 0
   },
   {
     "id": 8,
