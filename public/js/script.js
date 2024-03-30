@@ -1,5 +1,5 @@
 function findChecked(){
-    let checkboxes = document.querySelectorAll('[id$="Check"]');
+    let checkboxes = document.querySelectorAll('[name$="Check"]');
     let checked = []
     checkboxes.forEach((checkbox) => {
         if(checkbox.checked) checked.push(checkbox);
@@ -10,10 +10,10 @@ function findChecked(){
 function updateProfileCards(){
     checked = findChecked();
     checked.forEach((checkbox) => {
-        let id = parseInt(checkbox.id);
-        document.getElementById(id+'Money').value = allMoney.value;
-        document.getElementById(id+'Power'). value = allPower.value;
-        document.getElementById(id+'Experience').value = allExperience.value;
+        let id = parseInt(checkbox.name);
+        document.querySelector(`[name="${id}Money"]`).value = allMoney.value;
+        document.querySelector(`[name="${id}Power"]`). value = allPower.value;
+        document.querySelector(`[name="${id}Experience"]`).value = allExperience.value;
     })
 }
 
@@ -34,7 +34,8 @@ allExperience.addEventListener('input', () => {
 })
 
 oznacVse.addEventListener('change', () => {
-    let checkboxes = document.querySelectorAll('[id$="Check"]');
+    console.log('zmena');
+    let checkboxes = document.querySelectorAll('[name$="Check"]');
     checkboxes.forEach(checkbox => checkbox.checked = oznacVse.value === 'true');
     oznacVse.value = oznacVse.value === 'true' ? 'false' : 'true';
 });
