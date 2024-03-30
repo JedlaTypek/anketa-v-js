@@ -11,14 +11,10 @@ function updateProfileCards(){
     checked = findChecked();
     checked.forEach((checkbox) => {
         let id = parseInt(checkbox.id);
-        document.querySelector(`[name="${id}Money"]`).value = allMoney.value;
-        document.querySelector(`[name="${id}Power"]`). value = allPower.value;
-        document.querySelector(`[name="${id}Experience"]`).value = allExperience.value;
+        document.querySelector(`[name="${id}money"]`).value = allMoney.value;
+        document.querySelector(`[name="${id}power"]`). value = allPower.value;
+        document.querySelector(`[name="${id}experience"]`).value = allExperience.value;
     })
-}
-
-function validate(){
-
 }
 
 allMoney.addEventListener('input', () => {

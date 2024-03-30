@@ -17,9 +17,9 @@
                         <p>Peníze: <%= person.money %>, Síla: <%= person.power %>, Zkušenosti: <%= person.experience %></p>
                         <input type="checkbox" id="<%= person.id %>Check"><label>Upravovat hromadně</label>
                         <h3>Změny hodnot:</h3>
-                        <input type="number" name="<%= person.id %>Money" placeholder="Peníze" step="1">
-                        <input type="number" name="<%= person.id %>Power" placeholder="Síla" step="1">
-                        <input type="number" name="<%= person.id %>Experience" placeholder="Zkušenosti" step="1">
+                        <input type="number" name="<%= person.id %>money" placeholder="Peníze" step="1">
+                        <input type="number" name="<%= person.id %>power" placeholder="Síla" step="1">
+                        <input type="number" name="<%= person.id %>experience" placeholder="Zkušenosti" step="1">
                     </div>
                 <% }) %>
                 <div class="profileCard">
@@ -36,5 +36,5 @@
     </main>
     <%- include('blocks/footer'); -%>
 </body>
-<script src="js/script.js"></script>
+<script src="js/index.js"></script>
 </html>

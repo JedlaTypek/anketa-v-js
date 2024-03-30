@@ -24,19 +24,77 @@ app.get('/', function (req, res) {
     });
 })
 
-app.post("/submit", (req, res) => {
-    console.log(req.body);
+app.get('/stats', function (req, res) {
+    let sortBy = req.query.sortBy;
+    let order = req.query.order;
+    let nameContains = req.query.nameContains; 
+    
     getBalances((err, people) => {
         if (err) {
             console.error('Chyba při získávání zůstatků:', err);
             res.status(500).send('Nastala chyba při získávání zůstatků');
             return;
         }
-        res.render('index', { people, year: new Date().getFullYear(), title: "Zápis informací do profilů"});
-    });
-  });
+        if(sortBy){ // řazení podle money, power, experience
 
-  function getBalances(callback) {
+        }
+        if(order){ // vzestupně nebo sestupně
+
+        }
+        if(nameContains){ // hledá jména, která obsahují daný string
+
+        }
+
+        res.render('stats', { people, year: new Date().getFullYear(), title: "Statistiky"});
+    });
+})
+
+app.post("/submit", (req, res) => {
+    let changes = Object.fromEntries(Object.entries(req.body).filter(([key, value]) => value !== ''));
+    fs.readFile('changes.json', (err, changesData) => {
+        if (err) {
+            callback(err);
+            return;
+        }
+        let changesDataJson = JSON.parse(changesData);
+        changesDataJson.push(changes);
+        //zapsání výčet změn do souboru changes
+        fs.writeFile('changes.json', JSON.stringify(changesDataJson, null, 2), (err) => {
+            if (err) {
+                callback(err);
+                return;
+            }
+        });
+        //propsání změn do souboru balances.json
+        fs.readFile('balances.json', (err, balancesData) => {
+            let balancesDataJson = JSON.parse(balancesData);
+            console.log(balancesDataJson);
+            for(let key in changes){
+                let id = parseInt(key);
+                let text = key.replace(/[0-9]/g, '');
+                let value = parseInt(changes[key]);
+                balancesDataJson[id][text] += value;
+            }
+            fs.writeFile('balances.json', JSON.stringify(balancesDataJson, null, 2), (err) => {
+                if (err) {
+                    callback(err);
+                    return;
+                }
+            });
+        });
+
+    })
+    getBalances((err, people) => {
+        if (err) {
+            console.error('Chyba při získávání zůstatků:', err);
+            res.status(500).send('Nastala chyba při získávání zůstatků');
+            return;
+        }
+        res.render('uspech', {title: 'Úspěšně zapsáno do systému', year: new Date().getFullYear()});
+    });
+});
+
+function getBalances(callback) {
     fs.readFile('people.json', (err, peopleData) => {
         if (err) {
             callback(err);
@@ -51,7 +109,6 @@ app.post("/submit", (req, res) => {
             let balances = JSON.parse(balancesData);
             if (balances.length != people.length) {
                 balances = updateBalances(people, balances);
-                console.log(balances);
                 fs.writeFile('balances.json', JSON.stringify(balances, null, 2), (err) => {
                     if (err) {
                         callback(err);

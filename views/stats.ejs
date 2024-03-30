@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistiky</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <%- include('blocks/header'); -%>
     <main>
-        
+        <button id="filtrovat" style="margin-bottom: 60px;">Filtrovat</button>
+        <div></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Jméno</th>
+                    <th>Peníze</th>
+                    <th>Síla</th>
+                    <th>Zkušenosti</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% people.forEach(function(person){ %>
+                    <tr>
+                        <th><%= person.name %></th>
+                        <th><%= person.money %></th>
+                        <th><%= person.power %></th>
+                        <th><%= person.experience %></th>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
     </main>
     <%- include('blocks/footer'); -%>
 </body>
+<script src="js/stats.js"></script>
 </html>

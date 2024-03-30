@@ -1,0 +1,3 @@
+{
+    "ignore": ["changes.json", "balances.json", "people.json"]
+}
