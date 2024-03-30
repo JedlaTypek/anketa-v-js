@@ -1,0 +1,95 @@
+:root{
+    --zelena: #2e922b;
+    --zelena-hover: #2a8327;
+    --modra: #58adb8;
+    --shadow: rgba(88, 173, 184, 0.329);
+    --prekryti: rgba(0, 0, 0, 0.7);
+    --transparent: rgb(0,0,0,0);
+}
+
+html{
+    min-height: 100vh;
+    /*background-image: url('../media/pozadi.jpg');*/
+    background-color: #131313;
+    margin: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body{
+    margin:0;
+    padding: 0;
+}
+
+header, footer{
+    text-align: center;
+    color: white;
+    background:linear-gradient(0deg, var(--prekryti), var(--prekryti)), url(../media/pozadi.jpg);
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin: 0;
+}
+
+h1{
+    font-family: Consolas,monaco, monospace;
+    font-size: 50px;
+    line-height: 65px;
+    text-transform: uppercase;
+}
+
+main{
+    width: 1200px;
+    max-width: 100%;
+    margin: 80px auto;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Horizontální vycentrování */
+    align-items: center; /* Vertikální vycentrování */
+}
+
+.profileCard{
+    background:linear-gradient(0deg, var(--prekryti), var(--prekryti)), url(../media/pozadi-karty.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px;
+    border-radius: 30px;
+    color:white;
+    text-align: center;
+    box-shadow: var(--shadow) 0 0 20px;
+    transition: 300ms;
+}
+
+.profileCard:hover{
+    box-shadow: var(--shadow) 0 0 40px;
+}
+
+.profileCard h2{
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.profileCardWraper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tři sloupce s flexibilní šířkou */
+    grid-gap: 50px; /* Volitelná mezera mezi sloupci */
+}
+
+button{
+    padding: 15px 30px;
+    margin-top: 60px;
+    background-color: var(--zelena);
+    color: black;
+    border:none;
+    border-radius: 30px;
+    transition: 300ms;
+}
+
+button:hover{
+    background-color: var(--zelena-hover);
+    transform: scale(1.1);
+}
