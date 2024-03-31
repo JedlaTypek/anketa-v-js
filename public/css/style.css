@@ -37,7 +37,7 @@ header{
     padding: 80px 0;
 }
 
-header a{
+header a, footer a{
     color: white;
 }
 
@@ -145,12 +145,12 @@ tbody{
     background-color: var(--seda);
 }
 
-th{
+th, td{
     padding: 10px;
     border-collapse: collapse;
 }
 
-tbody th{
+td{
     border: solid 1px var(--pozadi);
 }
 
@@ -184,4 +184,9 @@ tbody th{
 .icon{
     width: 24px;
     vertical-align: bottom;
+}
+
+#nameContains{
+    padding: 15px 30px;
+    border-radius: 30px;
 }

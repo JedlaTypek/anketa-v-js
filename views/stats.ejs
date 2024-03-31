@@ -10,7 +10,10 @@
 <body>
     <%- include('blocks/header'); -%>
     <main>
-        <!--<input type="text" id="nameContains"><button id="nameContainsBtn" style="margin-bottom: 60px;">Filtrovat</button>-->
+        <input type="text" id="nameContains">
+        <a id="nameContainsBtn" href="?sortBy=name&order=asc&nameContains="><button style="margin-bottom: 60px;">Filtrovat</button></a>
+        <a id="cancelNameContains" href=""><button>Zrušit</button></a>
+        
         <table>
             <thead>
                 <tr>
@@ -21,14 +24,18 @@
                 </tr>
             </thead>
             <tbody>
-                <% people.forEach(function(person){ %>
-                    <tr>
-                        <th><%= person.name %></th>
-                        <th><%= person.money %></th>
-                        <th><%= person.power %></th>
-                        <th><%= person.experience %></th>
-                    </tr>
-                <% }) %>
+                <% if (people.length === 0) { %>
+                    <tr><td colspan="4">Takovému filtru neodpovídají žádné položky.</td></tr>
+                <% } else { %>
+                    <% people.forEach(function(person) { %>
+                        <tr>
+                            <td><%= person.name %></th>
+                            <td><%= person.money %></th>
+                            <td><%= person.power %></th>
+                            <td><%= person.experience %></th>
+                        </tr>
+                    <% }) %>
+                <% } %>
             </tbody>
         </table>
     </main>

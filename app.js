@@ -42,7 +42,7 @@ app.get('/stats', function (req, res) {
             }
         }
         if(nameContains){ // hledá jména, která obsahují daný string
-            console.log(nameContains)
+            people = people.filter(person => person.name.toLowerCase().includes(nameContains.toLowerCase()));
         }
 
         res.render('stats', { people, year: new Date().getFullYear(), title: "Statistiky"});
